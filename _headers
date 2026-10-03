@@ -1,0 +1,17 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# Photos and logos never change without a new filename, so let browsers keep
+# them. Netlify's default (max-age=0, must-revalidate) makes a repeat visitor
+# re-check all 23 assets on every page view.
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Stylesheets and scripts do change on redeploy, so keep these short.
+/*.css
+  Cache-Control: public, max-age=3600, must-revalidate
+/*.js
+  Cache-Control: public, max-age=3600, must-revalidate

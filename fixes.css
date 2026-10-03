@@ -1,0 +1,6 @@
+.hero-art .brand-watermark,
+.real-photo .brand-watermark {
+  width: 92px;
+  height: auto;
+  object-fit: contain;
+}

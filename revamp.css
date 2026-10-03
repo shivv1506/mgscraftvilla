@@ -1,0 +1,1144 @@
+:root{--orange:#f07822;--magenta:#c63472;--ink:#231f20;--cream:#fbf6f0;--gold:#b08d57;--line:rgba(35,31,32,.13)}body{background:var(--cream);color:var(--ink)}.site-header{position:sticky!important;top:0;z-index:100;background:rgba(251,246,240,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);height:76px}.site-header>a:first-child{display:flex;align-items:center}.brand-logo{width:110px;height:auto;display:block}.site-header .brand{display:none}nav{gap:1.45rem}nav a{font-size:.75rem;letter-spacing:.01em}.nav-cta{background:var(--ink);color:#fff!important;border-color:var(--ink)!important;padding:.72rem 1rem!important}.nav-cta:hover{background:var(--magenta);border-color:var(--magenta)!important}.hero{min-height:calc(100vh - 76px);background:var(--cream)}.hero-copy{padding-top:clamp(82px,11vw,165px);padding-left:clamp(7vw,12vw,14vw);padding-bottom:70px}.hero-copy h1{max-width:680px}.hero-copy .intro{font-size:clamp(1rem,1.4vw,1.22rem);max-width:430px}.hero-art{min-height:calc(100vh - 76px);background:#9d7b5d}.hero-art>img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 44%}.hero-art:after{display:none}.paint-note{box-shadow:0 12px 28px rgba(35,31,32,.22)}.button{min-height:46px;transition:transform .2s ease,background .2s ease}.button:hover{transform:translateY(-2px)}.button-orange{box-shadow:0 9px 20px rgba(240,120,34,.2)}.proof-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.proof-strip div{padding:19px 5vw;background:#fff;text-align:center;font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;font-weight:700}.intro-band{padding:100px 12vw}.paths .path{transition:transform .25s ease,filter .25s ease}.paths .path:hover{transform:translateY(-5px);filter:saturate(1.1)}.shop{background:#fff}.section-head{align-items:center}.products{gap:22px}.product{padding-bottom:20px}.products .product-art{height:430px;padding:0;background:#ead9cd!important}.products .product-art:after{display:none}.product-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}.product .tag{color:var(--magenta);font-weight:700}.product h3{font-size:2rem;margin-bottom:.55rem}.product-summary{min-height:74px}.product a{font-size:.79rem;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}.custom{background:linear-gradient(120deg,#f7e2d2,#f3d5e2)}.vision-form{box-shadow:0 18px 35px rgba(84,42,38,.1)}.vision-form input:focus,.vision-form textarea:focus,dialog input:focus{border-color:var(--magenta)}.workshops{background:#eef2ed}.studio{background:var(--magenta)}.studio-details{background:#fff}.rates strong{color:var(--magenta)}.whatsapp{background:#231f20;color:#fff}.whatsapp:hover{background:#43393a}.whatsapp-strip{background:#231f20;color:#fff;padding:28px 8vw;display:flex;align-items:center;justify-content:space-between;gap:20px}.whatsapp-strip p{margin:0;font-size:.86rem}.form-message{font-weight:600}.form-message a{color:var(--magenta)}dialog{border-radius:2px}dialog::backdrop{backdrop-filter:blur(4px)}footer{padding:32px 8vw}.mobile-enquiry{display:none}@media(max-width:800px){.site-header{height:68px}.brand-logo{width:94px}.menu{display:block}.site-header nav{top:68px;left:0;right:0;border-top:1px solid var(--line);box-shadow:0 14px 25px rgba(35,31,32,.08);padding:1.2rem 6vw}.site-header nav a{font-size:.9rem}.hero{min-height:auto}.hero-copy{padding:68px 9vw 48px}.hero-art{min-height:540px}.paint-note{right:16px;bottom:16px}.proof-strip{grid-template-columns:1fr}.proof-strip div{padding:13px}.intro-band{padding:75px 9vw}.products .product-art{height:500px}.product-summary{min-height:0}.section{padding:75px 8vw}.custom{padding:75px 8vw}.whatsapp-strip{align-items:flex-start;flex-direction:column}.mobile-enquiry{display:flex;position:fixed;z-index:110;right:15px;bottom:15px;background:#231f20;color:#fff;border-radius:3px;padding:12px 16px;font-size:.75rem;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(35,31,32,.28)}}
+
+/* ============ Accessibility, motion & focus ============ */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;font:700 .8rem var(--sans);text-decoration:none}
+.skip-link:focus{left:8px;top:8px}
+:where(a,button,input,textarea,select,[tabindex]):focus-visible{outline:2px solid var(--magenta);outline-offset:3px;border-radius:2px}
+.honeypot{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+[id]{scroll-margin-top:92px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .button:hover,.paths .path:hover{transform:none}
+}
+
+/* ============ Shop section footnote ============ */
+.section-foot{margin:38px 0 0;font-size:.85rem;text-align:center}
+.section-foot a{color:var(--magenta);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+
+/* ============ Form states ============ */
+.form-message:not(:empty){margin-top:1.1rem;padding:.85rem 1rem;background:rgba(198,52,114,.08);border-left:3px solid var(--magenta);font-size:.8rem;line-height:1.5}
+.form-message.is-error:not(:empty){background:rgba(240,120,34,.1);border-left-color:var(--orange)}
+button[disabled]{opacity:.55;cursor:progress}
+
+/* ============ Visit / contact ============ */
+.visit{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;border-top:1px solid var(--line)}
+.visit-copy p{max-width:400px;font-size:.95rem}
+.visit-list{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.visit-list li{background:#fff;padding:22px 26px;display:grid;gap:5px}
+.visit-list span{font-size:.66rem;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:#7d6f68}
+.visit-list b{font:600 1.15rem/1.3 var(--serif);letter-spacing:-.02em}
+.visit-list a{color:var(--magenta);text-decoration:none;border-bottom:1px solid rgba(198,52,114,.35)}
+.visit-list a:hover{border-bottom-color:currentColor}
+
+/* ============ Footer ============ */
+footer:has(.footer-brand){display:grid;grid-template-columns:1.2fr 1fr auto;gap:2.5rem;align-items:center;padding:44px 8vw}
+.footer-brand p{margin:.9rem 0 0;max-width:250px;opacity:.75}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:center}
+.footer-nav a{font-size:.78rem;font-weight:600;text-decoration:none;opacity:.85}
+.footer-nav a:hover{opacity:1;text-decoration:underline}
+.footer-meta{display:grid;gap:.5rem;justify-items:end;text-align:right}
+.footer-meta p{margin:0;opacity:.6;font-size:.72rem}
+.footer-meta a{font-weight:700;text-decoration:none}
+
+@media(max-width:800px){
+  [id]{scroll-margin-top:80px}
+  .visit{grid-template-columns:1fr;gap:34px;padding:70px 8vw}
+  .visit-list li{padding:18px 20px}
+  footer:has(.footer-brand){grid-template-columns:1fr;gap:1.8rem;justify-items:start;text-align:left}
+  .footer-nav{justify-content:flex-start}
+  .footer-meta{justify-items:start;text-align:left}
+}
+
+/* styles.css hides every <nav> at <=800px for the mobile menu; the footer nav is
+   not part of that menu, so opt it back in. */
+.footer-nav{position:static;background:none;box-shadow:none;padding:0;flex-direction:row;align-items:center}
+@media(max-width:800px){.footer-nav{display:flex!important;position:static;padding:0;background:none;box-shadow:none;flex-direction:row;gap:.4rem 1.2rem}}
+
+/* Directions / hours links */
+.visit-directions{justify-self:start;font-size:.76rem;font-weight:700;text-decoration:none;color:var(--magenta);border-bottom:1px solid rgba(198,52,114,.35);margin-top:4px}
+.visit-directions:hover{border-bottom-color:currentColor}
+.studio-visit-line{margin:1.4rem 0 0;font-size:.82rem}
+.studio-visit-line b{font-weight:700}
+.studio-visit-line a{color:inherit;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
+.studio-visit-line a:hover{border-bottom-color:currentColor}
+
+/* Square monogram mark, used in the footer, where the wide lockup sat in a
+   white plate that showed as a box against the dark ground. */
+.brand-mark{display:block;width:72px;height:72px}
+@media(max-width:800px){.brand-mark{width:62px;height:62px}}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ============ Annotation overlay ============ */
+/* Stacking order: canvas 9000 < sticky header 9010 < tools 9020.
+   Marks cover the whole page and scroll away underneath the header, which
+   stays clean and constant rather than being painted over. */
+.site-header{z-index:9010}
+/* The header is normally frosted over the page. While annotations exist it goes
+   solid, so marks passing under it are hidden rather than faintly smeared. */
+body.has-annotations .site-header{background:var(--cream);backdrop-filter:none}
+.annot-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;z-index:9000;
+  pointer-events:none;   /* inert until the tab is opened */
+}
+body.is-annotating .annot-canvas{pointer-events:auto;cursor:crosshair;touch-action:none}
+body.is-annotating{user-select:none;-webkit-user-select:none}
+
+.annot-bar{
+  position:fixed;left:16px;bottom:16px;z-index:9020;
+  display:flex;align-items:center;gap:.4rem;
+  max-width:calc(100vw - 32px)
+}
+.annot-toggle{
+  display:inline-flex;align-items:center;gap:.45rem;flex:none;
+  height:40px;padding:0 .95rem;border:1px solid var(--line);border-radius:3px;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);color:var(--ink);
+  font:700 .72rem var(--sans);letter-spacing:.04em;cursor:pointer;
+  box-shadow:0 8px 22px rgba(35,31,32,.16);transition:background .18s ease,color .18s ease
+}
+.annot-toggle svg{width:16px;height:16px}
+.annot-toggle:hover{background:#fff}
+.annot-bar.is-open .annot-toggle{background:var(--ink);color:#fff;border-color:var(--ink)}
+.annot-bar.is-open .annot-toggle-text{display:none}
+.annot-bar.is-open .annot-toggle{padding:0;width:40px;justify-content:center}
+
+.annot-panel{
+  display:none;align-items:center;gap:.45rem;flex-wrap:wrap;
+  padding:6px 10px;border:1px solid var(--line);border-radius:22px;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  box-shadow:0 10px 26px rgba(35,31,32,.18)
+}
+.annot-bar.is-open .annot-panel{display:flex}
+.annot-group{display:flex;align-items:center;gap:.3rem}
+.annot-divider{width:1px;height:18px;background:var(--line);flex:none}
+
+.annot-tool{
+  width:30px;height:30px;flex:none;display:grid;place-items:center;padding:0;
+  border:0;border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;
+  transition:background .16s ease,color .16s ease
+}
+.annot-tool svg{width:17px;height:17px}
+.annot-tool:hover{background:rgba(35,31,32,.08)}
+.annot-tool[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+.annot-swatch{
+  width:19px;height:19px;flex:none;padding:0;border-radius:50%;cursor:pointer;
+  background:var(--swatch,#000);border:2px solid transparent;
+  box-shadow:0 0 0 1px rgba(35,31,32,.2);transition:transform .16s ease
+}
+.annot-swatch:hover{transform:scale(1.15)}
+.annot-swatch[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--ink)}
+
+.annot-custom{
+  position:relative;width:19px;height:19px;flex:none;display:block;cursor:pointer;
+  border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(35,31,32,.2);
+  background:conic-gradient(#f07822,#c63472,#7f9a83,#b08d57,#f07822)
+}
+.annot-custom input[type=color]{
+  position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);
+  padding:0;border:0;background:transparent;opacity:0;cursor:pointer
+}
+
+.annot-action{
+  border:0;background:transparent;cursor:pointer;padding:.3rem .45rem;border-radius:3px;
+  font:700 .68rem var(--sans);letter-spacing:.03em;color:var(--ink);flex:none
+}
+.annot-action:hover:not(:disabled){background:rgba(35,31,32,.08)}
+.annot-action:disabled{opacity:.3;cursor:default}
+
+.annot-close{
+  width:26px;height:26px;flex:none;display:grid;place-items:center;padding:0;
+  border:0;border-radius:50%;background:transparent;color:var(--ink);cursor:pointer
+}
+.annot-close svg{width:14px;height:14px}
+.annot-close:hover{background:rgba(35,31,32,.08)}
+
+/* Keep clear of the WhatsApp button in the opposite corner. */
+@media(max-width:800px){
+  .annot-bar{left:12px;bottom:12px;right:12px;max-width:none;align-items:center}
+  .annot-panel{flex:1;min-width:0;padding:6px 8px;gap:.3rem;justify-content:flex-start}
+  .annot-tool{width:28px;height:28px}
+  .annot-bar.is-open + .mobile-enquiry,
+  body.is-annotating .mobile-enquiry{opacity:0;pointer-events:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .annot-toggle,.annot-tool,.annot-swatch{transition:none}
+}
+
+/* ============ The studio wall ============ */
+.wall-section{background:#efe7dc;padding:88px 0 74px;position:relative;overflow:hidden}
+/* Warm plaster: a soft wash plus a faint grain so it reads as a wall, not a panel. */
+.wall-section:before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.55),transparent 60%),
+    repeating-linear-gradient(115deg,rgba(35,31,32,.022) 0 2px,transparent 2px 5px);
+}
+.wall-head{position:relative;text-align:center;padding:0 8vw;margin-bottom:34px}
+.wall-head h2{font-size:clamp(2.3rem,4vw,3.8rem);margin-bottom:1rem}
+.wall-head>p:last-child{max-width:520px;margin:0 auto;font-size:.92rem}
+
+.wall{
+  position:relative;overflow-x:auto;overflow-y:hidden;
+  padding:38px 0 46px;cursor:grab;
+  scrollbar-width:thin;scrollbar-color:rgba(35,31,32,.28) transparent;
+  overscroll-behavior-x:contain;
+}
+.wall.is-dragging{cursor:grabbing;scroll-behavior:auto}
+.wall::-webkit-scrollbar{height:8px}
+.wall::-webkit-scrollbar-thumb{background:rgba(35,31,32,.25);border-radius:99px}
+.wall-surface{display:flex;align-items:flex-start;gap:40px;padding:0 max(6vw,28px);width:max-content}
+.wall-col{display:flex;flex-direction:column;gap:38px;margin-top:var(--top,0)}
+
+.wall-item{margin:0;width:var(--w);position:relative;transform:rotate(var(--rot,0deg));transition:transform .25s ease}
+.wall-item:hover{transform:rotate(0deg) scale(1.03);z-index:3}
+.wall-shot{
+  display:block;padding:9px 9px 11px;border:0;width:100%;cursor:pointer;
+  background:#fffdf9;box-shadow:0 10px 22px rgba(35,31,32,.2),0 1px 0 rgba(255,255,255,.7) inset
+}
+.wall-shot img{display:block;width:100%;height:auto;background:#e2d7ca}
+
+/* A pin head pressed through the top of the print. */
+.wall-item.is-pinned .wall-shot:after{
+  content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+  width:15px;height:15px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#ff9b6a,#c63472 62%,#8d2350);
+  box-shadow:0 3px 5px rgba(35,31,32,.4)
+}
+/* Two strips of masking tape at the top corners. */
+.wall-item.is-taped:before,.wall-item.is-taped:after{
+  content:'';position:absolute;top:-11px;width:56px;height:21px;z-index:2;
+  background:linear-gradient(180deg,rgba(240,226,199,.86),rgba(226,208,175,.78));
+  box-shadow:0 1px 3px rgba(35,31,32,.16)
+}
+.wall-item.is-taped:before{left:-13px;transform:rotate(-38deg)}
+.wall-item.is-taped:after{right:-13px;transform:rotate(38deg)}
+
+.wall-note{
+  font-family:'Caveat',ui-rounded,'Segoe Print',cursive;
+  font-size:1.32rem;line-height:1.15;color:#4a3f3a;
+  margin:11px 4px 0;transform:rotate(var(--tilt,0deg));text-align:center
+}
+.wall-hint{
+  position:relative;text-align:center;margin:6px 0 0;
+  font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  color:rgba(35,31,32,.42);transition:opacity .4s ease
+}
+.wall-hint.is-gone{opacity:0}
+
+/* ---- Lightbox ---- */
+.lightbox{
+  border:0;padding:0;max-width:min(94vw,980px);max-height:92vh;width:auto;
+  background:transparent;overflow:visible;color:#fff
+}
+.lightbox::backdrop{background:rgba(24,18,16,.88);backdrop-filter:blur(3px)}
+.lightbox figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lightbox img{
+  display:block;max-width:min(94vw,980px);max-height:74vh;width:auto;height:auto;
+  background:#fffdf9;padding:10px;box-shadow:0 24px 60px rgba(0,0,0,.5)
+}
+.lightbox figcaption{
+  font-family:'Caveat',ui-rounded,'Segoe Print',cursive;font-size:1.7rem;color:#fdf6ee;min-height:1px
+}
+.lightbox figcaption:empty{display:none}
+.lightbox-close{
+  position:absolute;top:-46px;right:-4px;width:38px;height:38px;border:0;border-radius:50%;
+  background:rgba(255,255,255,.14);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer
+}
+.lightbox-close:hover{background:rgba(255,255,255,.26)}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border:0;border-radius:50%;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;font-size:1.9rem;line-height:1
+}
+.lightbox-nav:hover{background:rgba(255,255,255,.26)}
+.lightbox-nav.prev{left:-58px}
+.lightbox-nav.next{right:-58px}
+
+@media(max-width:900px){
+  .lightbox-nav.prev{left:4px}
+  .lightbox-nav.next{right:4px}
+  .lightbox-close{top:-44px;right:0}
+}
+@media(max-width:800px){
+  .wall-section{padding:64px 0 56px}
+  .wall-surface{gap:26px;padding:0 22px}
+  .wall-col{gap:28px}
+  .wall-item{width:calc(var(--w) * .78)}
+  .wall-note{font-size:1.15rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .wall-item,.wall-item:hover{transition:none}
+  .wall-item:hover{transform:rotate(var(--rot,0deg))}
+}
+
+/* Home-page wall: a way through to the workshop page. */
+.wall-cta{position:relative;text-align:center;margin:22px 0 0;font-size:.85rem}
+.wall-cta a{color:var(--magenta);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ============================================================
+   Mobile & iOS Safari
+   ============================================================ */
+
+html{
+  -webkit-text-size-adjust:100%;   /* iOS inflates text in landscape without this */
+  text-size-adjust:100%;
+  -webkit-tap-highlight-color:transparent;   /* kills the grey flash on tap */
+}
+
+/* Safari renders NO blur at all without the prefix. */
+.site-header{-webkit-backdrop-filter:blur(16px)}
+body.has-annotations .site-header{-webkit-backdrop-filter:none}
+.annot-toggle{-webkit-backdrop-filter:blur(10px)}
+.annot-panel{-webkit-backdrop-filter:blur(12px)}
+dialog::backdrop{-webkit-backdrop-filter:blur(4px)}
+.lightbox::backdrop{-webkit-backdrop-filter:blur(3px)}
+
+/* iOS counts the collapsing toolbar inside 100vh, so full-height blocks overflow
+   the screen. dvh tracks the visible area; the vh line above stays as fallback. */
+.hero{min-height:calc(100dvh - 76px)}
+.hero-art{min-height:calc(100dvh - 76px)}
+.page{min-height:70dvh}
+.lightbox{max-height:92dvh}
+.lightbox img{max-height:74dvh}
+@media(max-width:800px){
+  .hero{min-height:auto}
+  .hero-art{min-height:540px}
+}
+
+/* Safari zooms the whole page when a focused input is under 16px. */
+@media(pointer:coarse){
+  .vision-form input,.vision-form textarea,dialog input,dialog textarea,
+  input[type=text],input[type=email],input[type=tel],textarea{
+    font-size:16px
+  }
+  .vision-form label span{font-size:.72rem}
+}
+
+/* Keep fixed corners clear of the home indicator and the notch in landscape.
+   env() resolves to 0 where there is no inset, so nothing moves on other devices. */
+.mobile-enquiry{
+  right:max(15px,env(safe-area-inset-right));
+  bottom:max(15px,env(safe-area-inset-bottom))
+}
+.annot-bar{
+  left:max(16px,env(safe-area-inset-left));
+  bottom:max(16px,env(safe-area-inset-bottom))
+}
+.site-header{
+  padding-left:max(5.5vw,env(safe-area-inset-left));
+  padding-right:max(5.5vw,env(safe-area-inset-right))
+}
+@media(max-width:800px){
+  .annot-bar{
+    left:max(12px,env(safe-area-inset-left));
+    right:max(12px,env(safe-area-inset-right));
+    bottom:max(12px,env(safe-area-inset-bottom))
+  }
+  .site-header{
+    padding-left:max(6vw,env(safe-area-inset-left));
+    padding-right:max(6vw,env(safe-area-inset-right))
+  }
+  footer{padding-bottom:max(44px,calc(env(safe-area-inset-bottom) + 24px))}
+}
+
+/* Momentum scrolling for the studio wall on older iOS. */
+.wall{-webkit-overflow-scrolling:touch}
+
+/* Long words (email addresses, URLs) must not push a narrow screen sideways. */
+body{overflow-wrap:break-word}
+.visit-list b,.contact-line{overflow-wrap:anywhere}
+
+/* A grid/flex child refuses to shrink below its longest word unless told to,
+   which was pushing the hero column 38px wider than a 320px screen. */
+.hero-copy,.workshop-copy,.studio-copy,.custom-copy,.visit-copy,
+.collection-copy,.section-head>div,.product,.wall-head{min-width:0}
+
+/* The display sizes had floors (h1 54px, h2 45px) too tall for small phones , 
+   "Craftswomanship" alone needed 337px inside a 269px column. */
+@media(max-width:480px){
+  /* "Craftswomanship" is 15 characters with no break point, the floor has to
+     clear it inside the page padding, or it splits mid-word. */
+  h1{font-size:clamp(2.1rem,10vw,3.4rem)}
+  .page-intro{padding:64px 7vw 46px}
+  h2{font-size:clamp(2rem,8.6vw,2.8rem)}
+  .intro-band h2{font-size:clamp(2rem,8.6vw,2.8rem)}
+  .collection-copy h2{font-size:clamp(2rem,8.6vw,3rem)}
+  .wall-head h2{font-size:clamp(1.9rem,7.6vw,2.3rem)}
+  .paint-head h2,.visit h2{font-size:clamp(2rem,8.6vw,2.8rem)}
+  dialog h2{font-size:2.2rem}
+  dialog{padding:34px 26px}
+  .studio-photo .photo-caption{font-size:clamp(1.6rem,7vw,2.4rem)}
+}
+
+/* Last-resort net: never let a single long word push past the screen edge. */
+h1,h2,h3,.wall-note{overflow-wrap:break-word}
+
+/* On a narrow phone the two hero CTAs cannot share a row, and were breaking
+   mid-phrase ("Explore / wearable art"). Let them stack, each on one line. */
+@media(max-width:520px){
+  .actions{flex-wrap:wrap;gap:1rem 1.4rem}
+  .actions .button,.actions .text-link{white-space:nowrap}
+  .button{padding:.8rem 1.15rem}
+}
+
+/* ---- Display type must never break mid-word ----
+   The hero copy column is only ~33vw wide, and "Handpainted" needs about 5.5x
+   the font size to sit on one line. At 6.8vw the word did not fit at ANY width
+   between 820px and 1600px, so overflow-wrap was splitting it as "Handpaint /
+   ed". Size the heading to the column it actually lives in, and take the
+   break-word net off display type so a bad fit shows up instead of mangling. */
+h1{font-size:clamp(3rem,6.1vw,6.2rem)}
+.hero-copy{padding-left:clamp(7vw,9vw,12vw)}
+h1,h2{overflow-wrap:normal;word-break:normal}
+h3,.wall-note{overflow-wrap:break-word}
+
+@media(max-width:480px){
+  h1{font-size:clamp(2.1rem,10vw,3.4rem)}
+}
+
+/* Between 800 and 1000px the two-column section head left "Craftswomanship"
+   a 249px slot for a word that needs 337px. Stack it a breakpoint later. */
+@media(max-width:1000px){
+  .section-head{display:block;margin-bottom:40px}
+  .section-head>p{max-width:520px;margin-top:1.3rem}
+}
+
+/* ============ Legal pages ============ */
+.legal{padding:0 8vw 100px;max-width:46rem;margin:0 auto}
+.legal h2{
+  font-size:clamp(1.35rem,2.2vw,1.7rem);letter-spacing:-.02em;
+  margin:2.6rem 0 .7rem;padding-top:1.6rem;border-top:1px solid var(--line)
+}
+.legal h2:first-child{border-top:0;padding-top:0;margin-top:0}
+.legal p{margin:0 0 1rem;font-size:.95rem;line-height:1.65}
+.legal ul{margin:0 0 1.2rem;padding-left:1.15rem;font-size:.95rem;line-height:1.65}
+.legal li{margin:.4rem 0}
+.legal a{color:var(--magenta);font-weight:600}
+.legal .nowrap{white-space:nowrap}
+.legal-updated{font-size:.78rem;letter-spacing:.04em;opacity:.6;margin-top:1.4rem}
+.legal-back{margin-top:2.8rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.legal-back a{font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media(max-width:800px){.legal{padding:0 8vw 72px}}
+.footer-legal{margin:.9rem 0 0;font-size:.75rem}
+.footer-legal a{color:inherit;opacity:.7;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.footer-legal a:hover{opacity:1}
+
+/* ============ FAQ ============ */
+.faq{padding:0 8vw 100px;max-width:46rem;margin:0 auto}
+.faq-group{
+  font-size:clamp(1.1rem,1.8vw,1.35rem);letter-spacing:.02em;text-transform:uppercase;
+  font-family:var(--sans);font-weight:700;
+  margin:3rem 0 .4rem;color:var(--magenta)
+}
+.faq-group:first-child{margin-top:0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  cursor:pointer;list-style:none;padding:1.15rem 2.2rem 1.15rem 0;position:relative;
+  font:600 1.05rem/1.4 var(--sans);letter-spacing:-.01em
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{
+  content:'';position:absolute;right:4px;top:1.55rem;width:9px;height:9px;
+  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  transform:rotate(45deg);transition:transform .2s ease
+}
+.faq-item[open] summary:after{transform:rotate(-135deg)}
+.faq-item summary:hover{color:var(--magenta)}
+.faq-answer{padding:0 0 1.4rem}
+.faq-answer p{margin:0 0 .9rem;font-size:.95rem;line-height:1.65;max-width:38rem}
+.faq-answer p:last-child{margin-bottom:0}
+.faq-answer .button{margin-top:.4rem}
+.faq-foot{
+  margin-top:3rem;padding-top:1.7rem;border-top:1px solid var(--line);
+  font-size:.9rem;line-height:1.6
+}
+.faq-foot a{color:var(--magenta);font-weight:700}
+@media(prefers-reduced-motion:reduce){.faq-item summary:after{transition:none}}
+@media(max-width:800px){.faq{padding:0 8vw 72px}.faq-item summary{font-size:1rem}}
+.detail-aside{margin:1.2rem 0 0;font-size:.82rem;opacity:.85}
+.detail-aside a{color:var(--magenta);font-weight:700}
+.custom small a{color:var(--magenta);font-weight:700;white-space:nowrap}
+
+/* ==================================================================
+   MOBILE, designed as mobile, not a shrunken desktop page.
+
+   The old mobile handling only narrowed the columns and scaled the
+   type down with clamp(). That keeps desktop PROPORTIONS: a 10.9px
+   eyebrow floating 24px above its heading, headings set at 1.03
+   leading that wrap to three cramped lines, and 150px of dead cream
+   between every section. Correct on a 1440px canvas, disjointed on a
+   375px one, which is why it read as a laptop page squeezed down.
+
+   What changes below: the photograph leads, the label sits ON its
+   heading, headings breathe internally and tighten externally, and
+   the page loses roughly a third of its height.
+================================================================== */
+
+@media (max-width: 800px) {
+
+  /* ---- 1. An immersive hero: the art arrives first --------------
+     Previously the first screen was type on cream and the only
+     photograph, Madhvi actually painting, sat below the fold. For
+     a studio whose whole argument is "one artist's hand", that is
+     the wrong opening. The image now fills the screen and the words
+     sit over it.                                                   */
+
+  .hero {
+    position: relative;
+    min-height: 88dvh;
+    display: block;
+    overflow: hidden;
+  }
+
+  .hero-art {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    z-index: 0;
+  }
+
+  .hero-art > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Keeps her hands and the brush in frame as the crop tightens. */
+    object-position: 62% 42%;
+  }
+
+  /* A scrim, weighted to the bottom where the type sits, so the
+     headline stays legible without flattening the photograph. */
+  .hero-art::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top,
+        rgba(24,16,12,.94) 0%,
+        rgba(24,16,12,.86) 22%,
+        rgba(24,16,12,.55) 46%,
+        rgba(24,16,12,.12) 70%,
+        rgba(24,16,12,.34) 100%);
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    min-height: 88dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Clears the floating WhatsApp / sketch pills, which sit at 14px. */
+    padding: 0 7vw calc(76px + env(safe-area-inset-bottom));
+    color: #fff;
+  }
+
+  .hero-copy .eyebrow { color: rgba(255,255,255,.82); }
+  .hero-copy h1 { color: #fff; }
+  .hero-copy .intro { color: rgba(255,255,255,.92); max-width: 30ch; }
+
+  /* The italic words carry the brand; warm them so they read as
+     paint rather than as generic emphasis. */
+  .hero-copy h1 i { color: #ffcfa0; }
+
+  /* The secondary link was near-invisible against the painted fabric. */
+  .hero-copy .text-link {
+    color: #fff;
+    border-bottom-color: rgba(255,255,255,.45);
+  }
+  .hero-copy .actions { gap: 1.1rem; align-items: flex-start; }
+
+  .hero .arc { display: none; }
+
+  /* "Made slowly, on purpose." was floating over the photo's busiest
+     corner. Park it top-right, quiet, out of the headline's way. */
+  /* On desktop this is a 155px magenta disc rotated into the corner.
+     Over a full-bleed photo it became a blot that ate a third of the
+     frame, so on a phone it reverts to what it actually is: a small
+     handwritten aside. */
+  .paint-note {
+    top: 16px;
+    right: 14px;
+    bottom: auto;
+    left: auto;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    border-radius: 2px;
+    background: rgba(198,52,114,.92);
+    padding: 7px 11px;
+    font-size: .68rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: .01em;
+    transform: rotate(-2.5deg);
+    box-shadow: 0 5px 16px rgba(20,14,10,.28);
+  }
+
+  /* ---- 2. Typographic rhythm ------------------------------------
+     The rule: tighten the space BETWEEN related things, open up the
+     space WITHIN a heading. Related lines should read as one block.  */
+
+  .eyebrow {
+    font-size: .78rem;      /* was 10.88px, under the legible floor */
+    letter-spacing: .11em;
+    margin-bottom: .5rem;   /* was 24px: a label adrift from its head */
+    opacity: .78;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 11.2vw, 3.3rem);
+    line-height: 1.07;
+    letter-spacing: -.022em;  /* was -1.5px, a desktop-scale value */
+    margin-bottom: .75rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 8.6vw, 2.5rem);
+    line-height: 1.12;       /* was 1.03, too tight once it wraps */
+    letter-spacing: -.018em;
+    margin-bottom: .7rem;    /* was 26.8px */
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    line-height: 1.16;
+    letter-spacing: -.012em;
+    margin-bottom: .45rem;
+  }
+
+  /* Body copy is the thing people actually read on a phone. */
+  p, li, .intro, .product-summary {
+    font-size: 1.0625rem;    /* 17px */
+    line-height: 1.62;
+  }
+
+  .section-head p,
+  .intro-band p,
+  section > p {
+    max-width: 38ch;         /* stops long, tiring measure */
+  }
+
+  /* ---- 3. Vertical economy --------------------------------------
+     The homepage was 12,280px, fifteen screens. Most of that was
+     air between sections, not content.                              */
+
+  .section, .custom { padding: 52px 7vw; }
+  .intro-band       { padding: 54px 7vw; }
+  .wall-section     { padding: 48px 0 44px; }
+  .visit            { padding: 52px 7vw; }
+  footer            { padding: 38px 7vw calc(38px + env(safe-area-inset-bottom)); }
+
+  .section-head { margin-bottom: 1.6rem; }
+
+  /* Product photographs were 500px tall each, three in a row, a
+     wall of scrolling. 360px still reads clearly on a phone. */
+  .products .product-art { height: 360px; }
+  .products { gap: 30px; }
+  .product h3 { font-size: 1.55rem; }
+
+  /* ---- 4. The three paths: painted marks, not template glyphs ----
+     ✦ ◒ ⌂ looked like clip-art and ⌂ renders differently on every
+     phone. A small brushed ellipse in the brand colours instead.    */
+
+  /* Brush strokes are defined once for every width, further down. */
+
+  /* ---- 5. One floating action, not two --------------------------
+     "Sketch!" and the WhatsApp pill were competing at the same
+     weight in the same corner. WhatsApp is how enquiries actually
+     arrive, so it keeps the words; sketching becomes a small mark.  */
+
+  .annot-toggle {
+    left: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 0;            /* hides the label, keeps the pencil */
+    line-height: 0;
+    opacity: .82;
+  }
+
+  .annot-toggle svg,
+  .annot-toggle .ico { margin: 0; }
+
+  .mobile-enquiry {
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    padding: 13px 18px;
+    font-size: .8rem;
+  }
+
+  /* ---- 6. Things you tap with a thumb ---------------------------
+     Most links measured 19-30px tall. The guidance on both iOS and
+     Android is 44px, and the menu button, the single most important
+     control on a phone, was 29px. Padding rather than font-size, so
+     nothing about the type changes.                                 */
+
+  .menu {
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    font-size: 1.35rem;
+    margin-right: -10px;   /* keeps the icon optically on the edge */
+  }
+
+  .site-header nav a {
+    padding-block: .6rem;
+    display: block;
+  }
+
+  .text-link,
+  .product a,
+  .visit a,
+  .footer-legal a,
+  .faq-foot a {
+    display: inline-block;
+    padding-block: .55rem;
+  }
+
+  /* An inline-block link inside a paragraph would otherwise inherit
+     the paragraph's leading and reopen the gaps we just closed. */
+  p > .text-link,
+  p > a { padding-block: .35rem; }
+
+  /* Footer navigation and any remaining standalone links. */
+  .footer-nav a,
+  footer nav a,
+  .footer-legal a,
+  .wall-more a,
+  .section-head a,
+  .wall-hint + a,
+  .back-to-top,
+  a[href^="#"] {
+    display: inline-block;
+    padding-block: .62rem;
+  }
+
+  /* ---- 7. A floor on the small print ----------------------------
+     Product tags, proof-strip labels and captions were rendering at
+     10.4-11px. Below about 12px, uppercase letter-spaced text stops
+     being skimmable on a phone held at arm's length.                */
+
+  .tag,
+  .proof-strip div,
+  .wall-note,
+  .product .tag,
+  figcaption,
+  small {
+    font-size: .75rem;
+    letter-spacing: .085em;
+  }
+
+  .wall-note { letter-spacing: normal; font-size: .82rem; }
+
+  .path .num,
+  .custom-copy small,
+  .wall-hint,
+  .rates strong + span,
+  .file-hint { font-size: .75rem; }
+
+  /* The three path numerals are a design element, not small print. */
+  .path .num { font-size: .8rem; letter-spacing: .12em; opacity: .55; }
+
+  /* "More about Coffee with Canvas" was the last 26px tap target. */
+  .workshops .text-link,
+  .workshops a:not(.button) { padding-block: .6rem; display: inline-block; }
+}
+
+/* Small phones (iPhone SE / mini): pull the display type in one more
+   notch so headlines still land on two lines rather than four. */
+@media (max-width: 380px) {
+  h1 { font-size: 2.3rem; }
+  h2 { font-size: 1.85rem; }
+  .hero-copy { padding-left: 6vw; padding-right: 6vw; }
+  .products .product-art { height: 320px; }
+}
+
+/* ==================================================================
+   No pill-shaped buttons.
+
+   Squared to a 3px radius, matching the dialogs and form fields,
+   which already use 2-3px. The capsule shape is the most recognisable
+   "generic template" tell and it fights the hand-made feel of the
+   rest of the page. The base rules in styles.css are squared too;
+   this block is a guard so a future edit there cannot reintroduce
+   the pill shape.
+================================================================== */
+
+.button,
+.nav-cta,
+.whatsapp,
+.mobile-enquiry,
+.annot-toggle,
+.annot-tool,
+.annot-action { border-radius: 3px; }
+
+/* The colour swatches stay round: they read as dots of paint, not
+   as buttons, and a squared swatch would look like a broken chip. */
+.annot-swatch,
+.annot-custom { border-radius: 50%; }
+
+
+/* ==================================================================
+   The three path cards: a real brush stroke.
+
+   This was a CSS ellipse with a lopsided border-radius, which read as
+   a stray coloured blob rather than a mark someone painted. A stroke
+   only looks painted if it does what a loaded brush does: lands thin,
+   swells through the pull, and breaks up as it lifts. That needs a
+   drawn outline, so each mark is an SVG path used as a mask, which
+   keeps it one colour we can tint per card and scale without blurring.
+
+   The three paths differ from one another on purpose. Three identical
+   marks would give the repetition away immediately.
+================================================================== */
+
+.paths .path .icon {
+  display: block;
+  width: 78px;
+  height: 16px;
+  margin-bottom: 15px;
+  background-color: var(--orange);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+}
+
+.paths .path:nth-child(1) .icon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M3%2015.8c9.7-3.9%2019.8-6.6%2030.1-8.1%2013.9-2%2028-1.9%2042%20.2%2010%201.5%2019.9%203.8%2029.6%206.9%204.9%201.5%209.6%203.4%2014.3%205.5-6-.9-12-2-18-2.8-12.9-1.8-25.9-2.9-39-3-12.4-.1-24.8.9-37%203-6.8%201.2-13.5%202.8-20.1%204.8%202.3-1.3%204.7-2.4%207.1-3.4-3.2.3-6.4.9-9.5%201.7.2-1.6.4-3.2.5-4.8z%22%2F%3E%3C%2Fsvg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M3%2015.8c9.7-3.9%2019.8-6.6%2030.1-8.1%2013.9-2%2028-1.9%2042%20.2%2010%201.5%2019.9%203.8%2029.6%206.9%204.9%201.5%209.6%203.4%2014.3%205.5-6-.9-12-2-18-2.8-12.9-1.8-25.9-2.9-39-3-12.4-.1-24.8.9-37%203-6.8%201.2-13.5%202.8-20.1%204.8%202.3-1.3%204.7-2.4%207.1-3.4-3.2.3-6.4.9-9.5%201.7.2-1.6.4-3.2.5-4.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+.paths .path:nth-child(2) .icon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M4%2014.2c8.2-4.4%2017.1-7%2026.3-8.2%2012.2-1.6%2024.6-1.2%2036.7%201%2011.3%202%2022.4%205.1%2033.1%209.2%205.1%201.9%2010%204.2%2014.7%206.8-6.6-1.7-13.2-3.3-19.9-4.6-13.6-2.6-27.4-4.1-41.3-4.2-11%200-22%201-32.8%203.1-5.9%201.1-11.7%202.6-17.4%204.5%201.9-1.6%204-3%206.2-4.2-2.6.1-5.1.5-7.6%201.1.7-1.5%201.3-2.9%202-4.5z%22%2F%3E%3C%2Fsvg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M4%2014.2c8.2-4.4%2017.1-7%2026.3-8.2%2012.2-1.6%2024.6-1.2%2036.7%201%2011.3%202%2022.4%205.1%2033.1%209.2%205.1%201.9%2010%204.2%2014.7%206.8-6.6-1.7-13.2-3.3-19.9-4.6-13.6-2.6-27.4-4.1-41.3-4.2-11%200-22%201-32.8%203.1-5.9%201.1-11.7%202.6-17.4%204.5%201.9-1.6%204-3%206.2-4.2-2.6.1-5.1.5-7.6%201.1.7-1.5%201.3-2.9%202-4.5z%22%2F%3E%3C%2Fsvg%3E");
+}
+.paths .path:nth-child(3) .icon {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M2%2012.4c10.4-2.9%2021.1-4.8%2031.9-5.7%2013.1-1.1%2026.3-.6%2039.3%201.5%2010.8%201.7%2021.4%204.4%2031.7%208%204.6%201.6%209.1%203.5%2013.4%205.7-5.7-1.3-11.4-2.6-17.2-3.6-12.4-2.2-25-3.5-37.6-3.8-11.7-.3-23.4.6-34.9%202.6-7.3%201.3-14.5%203.1-21.5%205.4%202.1-1.5%204.4-2.8%206.8-3.9-3.4.2-6.7.8-10%201.6.7-2.6%201.4-5.2%202.1-7.8z%22%2F%3E%3C%2Fsvg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%2024%22%3E%3Cpath%20d%3D%22M2%2012.4c10.4-2.9%2021.1-4.8%2031.9-5.7%2013.1-1.1%2026.3-.6%2039.3%201.5%2010.8%201.7%2021.4%204.4%2031.7%208%204.6%201.6%209.1%203.5%2013.4%205.7-5.7-1.3-11.4-2.6-17.2-3.6-12.4-2.2-25-3.5-37.6-3.8-11.7-.3-23.4.6-34.9%202.6-7.3%201.3-14.5%203.1-21.5%205.4%202.1-1.5%204.4-2.8%206.8-3.9-3.4.2-6.7.8-10%201.6.7-2.6%201.4-5.2%202.1-7.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.paths .path:nth-child(1) .icon { background-color: var(--orange); transform: rotate(-1.5deg); }
+.paths .path:nth-child(2) .icon { background-color: var(--magenta); transform: rotate(.8deg); }
+.paths .path:nth-child(3) .icon { background-color: var(--gold); transform: rotate(-2.2deg); }
+
+/* Safari before 15.4 and any browser without mask support would show a
+   solid rectangle, which is worse than nothing. Hide it there instead. */
+@supports not ((mask-image: url("#x")) or (-webkit-mask-image: url("#x"))) {
+  .paths .path .icon { display: none; }
+}
+
+@media (max-width: 800px) {
+  .paths .path .icon { width: 64px; height: 14px; margin-bottom: 13px; }
+}
+
+
+/* ==================================================================
+   Two ways to learn: the workshop and the classes, side by side.
+
+   Classes used to be a line of small print under the workshop copy,
+   which said "afterthought" more clearly than any wording could. Both
+   now get the same card, the same type scale and the same size of
+   button, so the page stops implying one matters more.
+================================================================== */
+
+.two-ways { background: #f6efe6; }
+
+.two-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.way {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: clamp(1.7rem, 3.2vw, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.way-kicker {
+  margin: 0;
+  font: 700 .72rem var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--magenta);
+}
+.way:last-child .way-kicker { color: var(--orange); }
+
+.way h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.5vw, 2.15rem);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+}
+.way > p { margin: 0; font-size: .95rem; line-height: 1.62; max-width: 42ch; }
+
+.way ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .42rem;
+  font-size: .85rem;
+}
+.way li { padding-left: 1.15rem; position: relative; }
+/* A painted tick rather than a bullet glyph, to stay off the emoji shelf. */
+.way li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .52em;
+  width: 9px;
+  height: 2px;
+  background: currentColor;
+  opacity: .42;
+}
+
+/* Push both buttons to the card's floor so they line up across the row
+   even when one card's copy runs a line longer. */
+.way .button { margin-top: auto; align-self: flex-start; }
+
+@media (max-width: 860px) {
+  .two-ways-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ==================================================================
+   The classes page.
+
+   Deliberately built on .vision-form, the commission form, rather
+   than a new look: same tinted card, same underlined fields, same
+   type scale. The only addition is the choice chips, which the other
+   forms have no equivalent for.
+================================================================== */
+
+.classes-page {
+  background: linear-gradient(118deg, #f2ead9, #eef0e6);
+  padding: 110px 12vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+}
+
+.classes-copy h1 { margin-bottom: 1rem; }
+.classes-copy > p { max-width: 410px; }
+
+.classes-copy ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: step;
+  margin: 1.8rem 0;
+}
+.classes-copy ol li {
+  counter-increment: step;
+  padding: .7rem 0;
+  border-bottom: 1px solid #cfc7ae;
+  font-size: .86rem;
+}
+.classes-copy ol li::before {
+  content: '0' counter(step);
+  color: var(--magenta);
+  font-weight: 700;
+  margin-right: 18px;
+}
+
+.classes-facts { display: grid; gap: 1.05rem; margin-bottom: 1.6rem; }
+.classes-facts div { display: grid; gap: .22rem; }
+.classes-facts b {
+  font: 700 .72rem var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+}
+.classes-facts span { font-size: .88rem; line-height: 1.58; max-width: 46ch; opacity: .86; }
+
+.classes-copy small { display: block; font-size: .72rem; }
+.classes-copy small a { color: var(--magenta); font-weight: 700; white-space: nowrap; }
+
+/* ---- Choice chips -------------------------------------------------
+   The rest of the form is underlined fields on a tinted card. A
+   default checkbox list would read as a different form bolted on, so
+   the chips borrow the same border colour, the same label type and
+   the same magenta focus the inputs already use.                     */
+
+.classes-form .choice-set {
+  border: 0;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.classes-form .choice-set legend {
+  float: left;          /* a legend ignores flex, so take it out of flow */
+  width: 100%;
+  padding: 0;
+  margin-bottom: .55rem;
+  font-size: .73rem;
+  font-weight: 700;
+}
+.classes-form .choice-set legend span {
+  font-size: .65rem;
+  color: #71645d;
+  font-weight: 400;
+  margin-left: .5rem;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: .48rem;
+  border: 1px solid #bdaaa0;
+  border-radius: 3px;
+  padding: .52rem .72rem;
+  cursor: pointer;
+  font: 400 .82rem var(--sans);
+  line-height: 1.2;
+  background: transparent;
+  transition: border-color .16s ease, background .16s ease, color .16s ease;
+}
+.choice:hover { border-color: var(--ink); }
+.choice input { accent-color: var(--magenta); margin: 0; flex: none; }
+.choice:has(input:checked) {
+  border-color: var(--magenta);
+  background: var(--magenta);
+  color: #fff;
+}
+.choice:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* Browsers without :has still get a usable, if plainer, checked state. */
+@supports not selector(:has(*)) {
+  .choice input:checked { outline: 2px solid var(--magenta); }
+}
+
+@media (max-width: 900px) {
+  .classes-page { grid-template-columns: 1fr; padding: 75px 8vw; gap: 45px; }
+}
+
+@media (max-width: 800px) {
+  .classes-page { padding: 60px 7vw 70px; }
+  .choice { padding: .72rem .85rem; font-size: .9rem; min-height: 44px; }
+  .classes-facts span { font-size: .95rem; }
+  .way > p, .way ul { font-size: 1rem; }
+}
+
+/* ------------------------------------------------------------------
+   Chip overrides, written at the specificity the base form uses.
+
+   .vision-form label and .vision-form input are (class + element),
+   which outranks a bare .choice (class). Without these the chip gets
+   display:block and stacks its box above its text, and the checkbox
+   itself inherits width:100% plus the underline meant for text
+   fields. Both selectors below match that weight and undo it.
+------------------------------------------------------------------ */
+
+.classes-form label.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: .48rem;
+  margin-bottom: 0;
+  font: 400 .82rem var(--sans);
+  width: auto;
+}
+
+.classes-form .choice input[type="checkbox"],
+.classes-form .choice input[type="radio"] {
+  width: auto;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 0;
+  background: none;
+  flex: none;
+  accent-color: var(--magenta);
+}
+
+.classes-form label.choice:has(input:checked) { color: #fff; }
+
+/* ------------------------------------------------------------------
+   Form small print on phones.
+
+   Field labels sit at .73rem, which computes to 11.7px. That was
+   fine as a desktop detail but falls under the 12px floor the rest
+   of the mobile pass set. Raised here for every form on the site,
+   not just the classes one, so the commission and waitlist forms do
+   not end up looking like the poorer relation.
+------------------------------------------------------------------ */
+
+@media (max-width: 800px) {
+  .vision-form label,
+  dialog label,
+  .classes-form .choice-set legend { font-size: .84rem; }
+
+  .vision-form label span,
+  .classes-form .choice-set legend span { font-size: .76rem; }
+
+  .classes-form label.choice { font-size: .94rem; }
+
+  /* The three fact headings and the footnote link, same 12px floor. */
+  .classes-facts b { font-size: .78rem; }
+  .classes-copy small { font-size: .8rem; }
+}
+
+/* ==================================================================
+   The workshops panel now holds a photograph.
+
+   It used to be a green block with a CSS circle and a 20rem coffee
+   emoji sitting in the corner. That read as a placeholder rather
+   than a studio, and the emoji broke the no-emoji rule outright.
+   The block styling is unwound here so a real image can fill it.
+================================================================== */
+
+.workshop-image {
+  background: #e8ded2;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.workshop-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Shifted right so the cap she is painting stays in frame; the
+     whole point of the photograph is the thing being made. */
+  object-position: 62% 46%;
+}
+
+@media (max-width: 800px) {
+  /* On a phone the panel stacks above the copy; a shorter crop stops
+     it pushing the heading off the first screen. */
+  .workshop-image { min-height: 0; aspect-ratio: 4 / 3; }
+  .workshop-image > img { object-position: 58% 42%; }
+}
+
+/* ------------------------------------------------------------------
+   Studio rates: the keyword is the heading now.
+
+   The layout put the real word ("By the hour") in 11px uppercase and
+   a filler word ("Enquire") in 53px magenta serif, so the eye landed
+   on the word carrying no information. The filler words are gone and
+   the keyword has taken the large size.
+------------------------------------------------------------------ */
+
+.rates strong {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin: 0 0 .5rem;
+}
+
+.rates p { font-size: .9rem; line-height: 1.6; }
+
+@media (max-width: 800px) {
+  .rates strong { font-size: 1.6rem; }
+  .rates p { font-size: 1rem; }
+}
