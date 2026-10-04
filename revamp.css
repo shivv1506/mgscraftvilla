@@ -1142,3 +1142,22 @@ h3,.wall-note{overflow-wrap:break-word}
   .rates strong { font-size: 1.6rem; }
   .rates p { font-size: 1rem; }
 }
+
+/* ------------------------------------------------------------------
+   Final mobile polish, from testing the live domain.
+
+   Two things measured below the floors the rest of the site keeps to:
+   the visit-list labels rendered at 10.6px, and the link out to the
+   workshops page had a 26px tap target.
+------------------------------------------------------------------ */
+
+@media (max-width: 800px) {
+  .visit-list span { font-size: .78rem; letter-spacing: .11em; }
+
+  .wall-more a,
+  .wall-section + * a[href="workshops.html"],
+  p > a[href="workshops.html"] {
+    display: inline-block;
+    padding-block: .6rem;
+  }
+}
